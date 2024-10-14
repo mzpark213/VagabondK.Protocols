@@ -130,9 +130,9 @@ namespace VagabondK.Protocols.Channels
             }
         }
 
-        private void CheckConnection(bool isWriting)
+        public bool CheckConnection(bool isWriting = false)
         {
-            if (provider != null) return;
+            if (provider != null) return false;
 
             lock (connectLock)
             {
@@ -159,6 +159,7 @@ namespace VagabondK.Protocols.Channels
                     }
                 }
             }
+            return true;
         }
 
         private readonly byte[] buffer = new byte[8192];

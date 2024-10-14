@@ -112,7 +112,7 @@ namespace VagabondK.Protocols.Channels
             }
         }
 
-        private void CheckConnection()
+        public void CheckConnection()
         {
             lock (connectLock)
             {
